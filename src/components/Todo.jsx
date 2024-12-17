@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Todo.css";
+import TodoList from "./TodoList";
 
 export default function Todo() {
     const [todo, setTodo] = useState('');
@@ -18,31 +19,36 @@ export default function Todo() {
     }
     
     return(
-        <div className="todo-container">
-            <h1 className="todo-title">Todo List</h1>
-            
-            <form className="todo-form" onSubmit={handleOnSubmit}>
-                <input 
-                    type="text" 
-                    name="todo" 
-                    id="todo" 
-                    className="todo-input"
-                    placeholder="Add a new task..."
-                    onChange={handleOnChange} 
-                    value={todo} 
-                />
-                <button type="submit" className="todo-button">
-                    Add Todo
-                </button>
-            </form>
+        <div className="todo-app">
+            <header className="todo-header">
+                <h1>My Todo List</h1>
+            </header>
 
-            <ul className="todo-list">
-                {todos.map((item, index) => (
-                    <li key={index} className="todo-item">
-                        {item}
-                    </li>
-                ))}
-            </ul>
+            <div className="todo-container">
+                <form className="todo-form" onSubmit={handleOnSubmit}>
+                    <input 
+                        type="text" 
+                        name="todo" 
+                        id="todo" 
+                        className="todo-input"
+                        placeholder="Add a new task..."
+                        onChange={handleOnChange} 
+                        value={todo} 
+                    />
+                    <button type="submit" className="todo-button">
+                        Add Todo
+                    </button>
+                </form>
+                <div className="todo-list">
+                    {todos.map((todo)=>(
+                        <TodoList key={todo} todo={todo}/>
+                    ))}
+                </div>
+            </div>
+
+            <footer className="todo-footer">
+                <p>&copy; 2024 Todo App</p>
+            </footer>
         </div>
     )
 }

@@ -45,19 +45,60 @@
 .todo-list {
     list-style: none;
     padding: 0;
-    margin: 0;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
-.todo-item {
-    background-color: white;
-    padding: 1rem;
-    margin-bottom: 0.5rem;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+.todo-list li {
+    background-color: #fff;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    transition: transform 0.2s ease;
+}
+
+.todo-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.15);
 }
 
 .todo-title {
     text-align: center;
     color: #333;
     margin-bottom: 2rem;
+}
+
+.todo-app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.todo-header {
+    background-color: #ffd700;
+    padding: 1rem;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.todo-header h1 {
+    margin: 0;
+    color: #333;
+}
+
+.todo-footer {
+    background-color: #ffd700;
+    padding: 1rem;
+    text-align: center;
+    margin-top: auto;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.todo-footer p {
+    margin: 0;
+    color: #333;
 } 
